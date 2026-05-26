@@ -1,0 +1,463 @@
+/* ============================================================
+   components.css — UI components: nav, buttons, cards, form
+   ============================================================ */
+
+/* ── Logo ───────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  transition: opacity var(--transition);
+}
+
+.logo:hover { opacity: 0.85; }
+
+.logo-icon {
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* ── Nav links ──────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #0a0b0f;
+}
+
+.btn-primary:hover {
+  background: #ffd060;
+  box-shadow: 0 0 24px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-hover);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+/* ── Hero elements ──────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(240,192,64,0.3);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl));
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+}
+
+.gradient-text {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: var(--space-10);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ── Planets (decorative) ───────────────────────────────── */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.planet-1 {
+  width: 320px;
+  height: 320px;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle at 35% 35%, #2a3a6e, #0d1a3a 60%, #060c1e);
+  box-shadow: inset -20px -20px 40px rgba(0,0,0,0.6), 0 0 60px rgba(79,142,247,0.1);
+  animation: orbit-float 12s ease-in-out infinite;
+}
+
+.planet-2 {
+  width: 80px;
+  height: 80px;
+  right: 280px;
+  top: 18%;
+  background: radial-gradient(circle at 40% 35%, #3d2a5e, #1a0d38);
+  box-shadow: inset -8px -8px 20px rgba(0,0,0,0.5), 0 0 20px rgba(180,100,240,0.15);
+  animation: orbit-float 8s ease-in-out infinite reverse;
+}
+
+.moon-glow {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,142,247,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Section headings ───────────────────────────────────── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.section-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Portfolio cards ────────────────────────────────────── */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-preview {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: hsl(var(--card-hue, 220) 30% 12%);
+  transition: transform var(--transition-slow);
+}
+
+.project-card:hover .card-placeholder {
+  transform: scale(1.05);
+}
+
+/* Replace card-placeholder with a real screenshot like this:
+   <img src="assets/screenshot-projectname.jpg" alt="Project Name" class="card-img" />
+   .card-img { width:100%; height:100%; object-fit:cover; } */
+
+.card-info {
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-white);
+  margin-bottom: var(--space-1);
+}
+
+.card-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.card-arrow {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+
+.project-card:hover .card-arrow {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #0a0b0f;
+}
+
+/* ── Pricing cards ──────────────────────────────────────── */
+.pricing-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  transition: all var(--transition);
+}
+
+.pricing-card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card--featured {
+  border-color: rgba(240,192,64,0.4);
+  background: linear-gradient(160deg, rgba(240,192,64,0.07) 0%, var(--color-bg-card) 60%);
+  box-shadow: 0 0 40px rgba(240,192,64,0.1);
+}
+
+.pricing-badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0a0b0f;
+  background: var(--color-accent);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+}
+
+.pricing-tier {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.pricing-price {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+.pricing-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.pricing-features li {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  padding-left: var(--space-1);
+}
+
+/* ── Contact form ───────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  width: 100%;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-faint);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.form-group select option {
+  background: var(--color-bg-card);
+}
+
+.form-success {
+  font-size: var(--text-sm);
+  color: #4ade80;
+  text-align: center;
+  min-height: 1.4em;
+  font-weight: 500;
+}
+
+/* ── Contact aside cards ────────────────────────────────── */
+.aside-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.aside-icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-3);
+}
+
+.aside-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.aside-card p,
+.aside-card a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.aside-card a:hover {
+  color: var(--color-accent);
+}

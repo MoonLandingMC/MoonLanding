@@ -1,0 +1,35 @@
+# netlify.toml — Netlify deployment configuration
+
+[build]
+  publish = "."
+
+# ── Security headers ──────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+
+# ── Cache static assets ───────────────────────────────────
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Redirects ─────────────────────────────────────────────
+# Uncomment and edit if you add a custom domain:
+# [[redirects]]
+#   from   = "https://www.moonlanding.studio/*"
+#   to     = "https://moonlanding.studio/:splat"
+#   status = 301

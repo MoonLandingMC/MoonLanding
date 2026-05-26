@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Landing — Bring Your Engagement to the Moon</title>
+  <meta name="description" content="Moon Landing — Web design that launches your business into orbit. Clean, modern websites built for small businesses." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (ordered by concern) -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CANVAS: Stars & shooting stars (drawn via JS)
+  ============================================================ -->
+  <canvas id="starfield"></canvas>
+
+  <!-- ============================================================
+       HEADER / NAV
+  ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Moon Landing home">
+        <span class="logo-icon">🌕</span>
+        <span class="logo-text">moon landing</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge reveal">✦ web design for small businesses</div>
+      <h1 class="hero-headline reveal reveal-delay-1">
+        Bring your engagement<br />
+        <span class="gradient-text">to the moon.</span>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        Beautiful, fast, handcrafted websites that help local businesses
+        stand out online — without the agency price tag.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+        <a href="#work" class="btn btn-ghost">See my work ↓</a>
+      </div>
+    </div>
+
+    <!-- Orbiting planet decoration -->
+    <div class="planet planet-1" aria-hidden="true"></div>
+    <div class="planet planet-2" aria-hidden="true"></div>
+    <div class="moon-glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       WORK / PORTFOLIO
+  ============================================================ -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ portfolio</span>
+        <h2 class="section-title">Recent launches</h2>
+        <p class="section-sub">Click any project to visit the live site.</p>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <!-- ── Project Card ── -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+          <div class="card-preview">
+            <div class="card-placeholder" style="--card-hue: 220;">
+              <span>🚀</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Project Name</h3>
+            <p class="card-desc">Restaurant / Branding / Web</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <!-- ── Project Card ── -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+          <div class="card-preview">
+            <div class="card-placeholder" style="--card-hue: 160;">
+              <span>🌍</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Project Name</h3>
+            <p class="card-desc">Retail / E-commerce / Web</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <!-- ── Project Card ── -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+          <div class="card-preview">
+            <div class="card-placeholder" style="--card-hue: 300;">
+              <span>⭐</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Project Name</h3>
+            <p class="card-desc">Services / Portfolio / Web</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <!-- ── ADD MORE CARDS AS NEEDED ── -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING
+  ============================================================ -->
+  <section class="section section-dark" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ pricing</span>
+        <h2 class="section-title">Transparent pricing,<br />no surprises.</h2>
+        <p class="section-sub">Every package includes mobile-friendly design, basic SEO, and a 30-day support window after launch.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Orbit</div>
+          <div class="pricing-price">$499</div>
+          <p class="pricing-desc">Perfect for getting online fast. A clean, single-page site that tells your story.</p>
+          <ul class="pricing-features">
+            <li>✓ Single-page design</li>
+            <li>✓ Mobile responsive</li>
+            <li>✓ Contact form</li>
+            <li>✓ Basic SEO setup</li>
+            <li>✓ 2 rounds of revisions</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-full">Get started</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Launch</div>
+          <div class="pricing-price">$999</div>
+          <p class="pricing-desc">A multi-page site with personality. Built to grow with your business.</p>
+          <ul class="pricing-features">
+            <li>✓ Up to 5 pages</li>
+            <li>✓ Custom design system</li>
+            <li>✓ Blog or gallery</li>
+            <li>✓ Google Analytics</li>
+            <li>✓ 4 rounds of revisions</li>
+            <li>✓ 30-day support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-full">Get started</a>
+        </div>
+
+        <div class="pricing-card reveal reveal-delay-2">
+          <div class="pricing-tier">Deep Space</div>
+          <div class="pricing-price">Custom</div>
+          <p class="pricing-desc">E-commerce, bookings, custom features — let's talk about what you need.</p>
+          <ul class="pricing-features">
+            <li>✓ Everything in Launch</li>
+            <li>✓ E-commerce or bookings</li>
+            <li>✓ Custom integrations</li>
+            <li>✓ Priority turnaround</li>
+            <li>✓ Ongoing maintenance</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-full">Let's talk</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">✦ contact</span>
+        <h2 class="section-title">Ready for liftoff?</h2>
+        <p class="section-sub">Tell me about your project and I'll get back to you within 24 hours.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <form class="contact-form reveal" id="contact-form" netlify name="contact" method="POST">
+          <!-- Netlify hidden field -->
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your business name" />
+          </div>
+
+          <div class="form-group">
+            <label for="package">Package interest</label>
+            <select id="package" name="package">
+              <option value="">Not sure yet</option>
+              <option value="orbit">Orbit — $499</option>
+              <option value="launch">Launch — $999</option>
+              <option value="deepspace">Deep Space — Custom</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell me about your project</label>
+            <textarea id="message" name="message" rows="5" placeholder="What does your business do? What are you looking for in a website?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            Send it to the moon 🚀
+          </button>
+          <p class="form-success" id="form-success" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-aside reveal reveal-delay-1">
+          <div class="aside-card">
+            <div class="aside-icon">📬</div>
+            <h3>Prefer email?</h3>
+            <!-- Replace with your actual email -->
+            <a href="mailto:hello@moonlanding.studio">hello@moonlanding.studio</a>
+          </div>
+          <div class="aside-card">
+            <div class="aside-icon">⏱️</div>
+            <h3>Turnaround</h3>
+            <p>Most projects launch in 2–4 weeks from our first call.</p>
+          </div>
+          <div class="aside-card">
+            <div class="aside-icon">📍</div>
+            <h3>Based in PA</h3>
+            <p>Serving local businesses everywhere — remote-friendly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌕</span>
+        <span class="logo-text">moon landing</span>
+        <p class="footer-slogan">Bring your engagement to the moon.</p>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Moon Landing. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS (ordered by dependency)
+  ============================================================ -->
+  <script src="js/starfield.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/utils.js"></script>
+
+</body>
+</html>

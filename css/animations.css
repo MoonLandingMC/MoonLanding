@@ -1,0 +1,87 @@
+/* ============================================================
+   animations.css — Keyframes, scroll reveals, transitions
+   ============================================================ */
+
+/* ── Scroll-reveal base state ───────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Staggered reveal delays ────────────────────────────── */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.34s; }
+
+/* ── Planet float ───────────────────────────────────────── */
+@keyframes orbit-float {
+  0%   { transform: translateY(-50%) translateX(0px);   }
+  50%  { transform: translateY(-50%) translateX(-16px); }
+  100% { transform: translateY(-50%) translateX(0px);   }
+}
+
+/* ── Slow spin (can use on decorative elements) ─────────── */
+@keyframes slow-spin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Twinkle (used on canvas stars via JS, but available) ── */
+@keyframes twinkle {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Fade-in-up (utility) ───────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Pulse glow ─────────────────────────────────────────── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(240,192,64,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(240,192,64,0.4); }
+}
+
+.pricing-card--featured {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* ── Header scroll shadow ───────────────────────────────── */
+.site-header.scrolled {
+  background: rgba(8, 11, 20, 0.95);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+}
+
+/* ── Button active press ────────────────────────────────── */
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ── Reduced motion preference ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .planet-1, .planet-2 {
+    animation: none;
+  }
+  .pricing-card--featured {
+    animation: none;
+  }
+}
